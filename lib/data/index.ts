@@ -1,1 +1,1 @@
-export { quizTiles } from "./quiz-tiles";
+// TODO: export data to use in components

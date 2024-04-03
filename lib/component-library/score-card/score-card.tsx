@@ -1,6 +1,7 @@
 import React from 'react';
 import { quizResults } from '@types';
 import styled from 'styled-components';
+import { Button } from '../button/button';
 
 interface Props {
     quizResult: quizResults;
@@ -45,7 +46,7 @@ export const ScoreCard = ({ quizResult, questions, name }: Props) => {
                     </TableRow>
                 </TableBody>
             </Table>
-            <Button onClick={() => window.location.reload()}>
+            <Button onClick={() => window.location.reload()} disabled={false}>
                 Restart
             </Button>
         </Wrapper>
@@ -70,12 +71,3 @@ const TableBody = styled.tbody``;
 const TableRow = styled.tr``;
 
 const TableData = styled.td``;
-
-const Button = styled.button`
-  color: #fff;
-  background-color: #023610;
-  cursor: pointer;
-  border: 1px solid #fff;
-  border-radius: 5px;
-  font-size: 1em;
-`;

@@ -1,7 +1,7 @@
 'use client'
 import styled from "styled-components";
 import { useState } from "react";
-import { Quiz } from "@component-library";
+import { Button, Quiz } from "@component-library";
 import { breakpointValues } from "@settings";
 
 export default function Home() {
@@ -58,13 +58,4 @@ const Label = styled.label``;
 const Input = styled.input`
   max-width: 100px;
   margin: 10px 0;
-`;
-
-const Button = styled.button<{disabled: boolean}>`
-  color: ${props => props.disabled ? '#000' : '#fff'};
-  background-color: ${props => props.disabled ? '#d3d3d3' : '#023610'};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  border: 1px solid #fff;
-  border-radius: 5px;
-  font-size: 1em;
 `;

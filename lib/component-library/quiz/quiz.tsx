@@ -3,6 +3,7 @@ import { quiz } from '@data';
 import { quizResults } from '@types';
 import { ScoreCard } from '../score-card/score-card';
 import styled from 'styled-components';
+import { Button } from '../button/button';
 
 interface Props {
     name: string;
@@ -120,13 +121,4 @@ const Answers = styled.div``;
 
 const BoldText = styled.p`
   font-weight: 700;
-`;
-
-const Button = styled.button<{disabled: boolean}>`
-  color: ${props => props.disabled ? '#000' : '#fff'};
-  background-color: ${props => props.disabled ? '#d3d3d3' : '#023610'};
-  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
-  border: 1px solid #fff;
-  border-radius: 5px;
-  font-size: 1em;
 `;

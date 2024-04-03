@@ -9,7 +9,12 @@ export const quiz = {
                 'Automated Programming Interface'],
             correctAnswer: 'Application Programming Interface',
         },
- 
+        {
+            id: 2,
+            question: `What does GQL stand for?`,
+            answers: ['Generalized Question Logic', 'Graphical Question Language', 'Global Query Locator', 'Graph Query Language'],
+            correctAnswer: 'Graph Query Language',
+        },
         {
             id: 3,
             question: `Which programming language is often 

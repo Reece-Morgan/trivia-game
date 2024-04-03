@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header Header component renders correctly 1`] = `
+<header
+  className="sc-beySPh kbYVsu"
+>
+  <h1
+    className="sc-guDLey gxFLyj"
+    data-testId="header-title"
+  >
+    Trivia Game
+  </h1>
+</header>
+`;

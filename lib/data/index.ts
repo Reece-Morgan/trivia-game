@@ -1,1 +1,1 @@
-// TODO: export data to use in components
+export { quiz } from './quiz'

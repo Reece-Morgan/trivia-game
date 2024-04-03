@@ -22,7 +22,8 @@
       "@trivia-game/*": ["./*"],
       "@component-library": ["lib/component-library/index.ts"],
       "@data": ["lib/data/index.ts"],
-      "@settings": ["lib/settings/index.ts"]
+      "@settings": ["lib/settings/index.ts"],
+      "@types": ["lib/types/index.ts"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

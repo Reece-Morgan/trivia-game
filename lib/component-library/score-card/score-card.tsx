@@ -17,7 +17,7 @@ export const ScoreCard = ({ quizResult, questions, name }: Props) => {
  
     return (
         <Wrapper>
-            <Title>Hello, <Span>{name}</Span>. Here is your Result Analysis</Title>
+            <Title><Span>{name}</Span>, here is your Quiz Result</Title>
             <Table>
                 <TableBody>
                     <TableRow>

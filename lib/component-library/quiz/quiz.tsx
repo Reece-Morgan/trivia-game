@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { quiz } from '@data';
 import { quizResults } from '@types';
 import { ScoreCard } from '../score-card/score-card';

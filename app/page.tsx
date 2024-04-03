@@ -12,13 +12,16 @@ export default function Home() {
           <StyledLink href='/programming-quiz'>Programming Quiz</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink href='/coming-soon'>Space Quiz</StyledLink>
+          <StyledLink href='/space-quiz'>Space Quiz</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink href='/coming-soon'>Football Quiz</StyledLink>
+          <StyledLink href='/football-quiz'>Football Quiz</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink href='/coming-soon'>Greek Mythology Quiz</StyledLink>
+          <StyledLink href='/greek-mythology-quiz'>Greek Mythology Quiz</StyledLink>
+        </ListItem>
+        <ListItem>
+          <StyledLink href='/super-duper-hard-jakey-d-football-quiz'>Super Duper Hard JakeyD Football Quiz</StyledLink>
         </ListItem>
       </List>
     </Wrapper>

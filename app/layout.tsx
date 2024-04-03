@@ -1,5 +1,6 @@
-'use client'
+"use client";
 import { Header } from "@component-library";
+import styled from "styled-components";
 
 export default function RootLayout({
   children,
@@ -8,10 +9,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <Body>
         <Header />
         {children}
-      </body>
+      </Body>
     </html>
   );
 }
+
+const Body = styled.body`
+  margin: 0;
+`;

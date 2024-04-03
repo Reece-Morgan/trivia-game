@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { quiz } from '@data';
-import { quizResults } from '@types';
+import { questionData, quizResults } from '@types';
 import { ScoreCard } from '../score-card/score-card';
 import styled from 'styled-components';
 import { Button } from '../button/button';
 
 interface Props {
     name: string;
+    quiz: questionData;
 }
  
-export const Quiz = ({ name }: Props) => {
+export const Quiz = ({ name, quiz }: Props) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState<string>('');
     const [answerChecked, setAnswerChecked] = useState<boolean>(false);

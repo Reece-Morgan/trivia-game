@@ -1,4 +1,6 @@
-export const quiz = {
+import { questionData } from "../types";
+
+export const quiz: questionData = {
     questions: [
         {
             id: 1,

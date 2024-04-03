@@ -1,1 +1,1 @@
-export type { quizResults } from './global-types';
+export type { questionData, quizResults } from './global-types';

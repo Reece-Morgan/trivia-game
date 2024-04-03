@@ -1,6 +1,6 @@
 import { questionData } from "../types";
 
-export const superDuperJakeyDFootballQuiz: questionData = {
+export const superDuperHardJakeyDFootballQuiz: questionData = {
     questions: [
         {
             id: 1,
@@ -25,10 +25,10 @@ export const superDuperJakeyDFootballQuiz: questionData = {
         },
         {
             id: 4,
-            question: 'Who is the only player to have won the FIFA World Cup, UEFA European Championship, and UEFA Champions League?',
-            answers: ['Cristiano Ronaldo', 'Philipp Lahm',
-                'Thierry Henry', 'Xavi Hernández'],
-            correctAnswer: 'Philipp Lahm',
+            question: 'Which player has scored the most goals in a single calendar year in professional football history?',
+            answers: ['Sergio Agüero', 'Gerd Müller',
+                'Thierry Henry', 'Pelé'],
+            correctAnswer: 'Gerd Müller',
         },
         {
             id: 5,

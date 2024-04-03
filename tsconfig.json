@@ -20,6 +20,7 @@
     "baseUrl": ".",
     "paths": {
       "@trivia-game/*": ["./*"],
+      "@component-library": ["lib/component-library/index.ts"],
       "@settings": ["lib/settings/index.ts"]
     }
   },

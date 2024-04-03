@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { quiz } from '@data';
 import { quizResults } from '@types';
 import { ScoreCard } from '../score-card/score-card';
+import styled from 'styled-components';
 
 interface Props {
     name: string;
@@ -11,7 +12,7 @@ export const Quiz = ({ name }: Props) => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState<string>('');
     const [answerChecked, setAnswerChecked] = useState<boolean>(false);
-    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number>(0);
+    const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number>(999);
     const [showResults, setShowResults] = useState<boolean>(false);
     const [quizResult, setQuizResult] = useState<quizResults>({
         score: 0,
@@ -47,53 +48,83 @@ export const Quiz = ({ name }: Props) => {
             setShowResults(true);
         }
         setSelectedAnswer('');
-        setSelectedAnswerIndex(0);
+        setSelectedAnswerIndex(999);
         setAnswerChecked(false);
     };
  
     return (
-        <div>
-            <div>
-                {!showResults ? (
-                    <div>
-                        <h4>{question}</h4>
-                        <ul>
-                            {answers.map((answer, idx) => (
-                                <li
-                                    key={idx}
+        <Wrapper>
+            {!showResults ? (
+                <QuizWrapper>
+                    <Question>{question}</Question>
+                    <List>
+                        {answers.map((answer, idx) => (
+                            <ListItem key={idx}>
+                                <Span
                                     onClick={() => onAnswerSelected(answer,idx)}
-                                    className={
-                                        'list-group-item ' +
-                                        (selectedAnswerIndex === 
-                                                idx ? 'active' : '') +
-                                        ' cursor-pointer'
-                                    }
+                                    isSelected={selectedAnswerIndex === idx}
                                 >
                                     {answer}
-                                </li>
-                            ))}
-                        </ul>
-                        <div>
-                            <b>Question
-                                {currentQuestionIndex + 1}/{questions.length}
-                            </b>
-                            <button
-                                onClick={handleNextQuestion}
-                                disabled={!answerChecked}
-                            >
-                                {currentQuestionIndex === questions.length - 1 ?
-                                    'Submit' : 'Next Question'}
-                            </button>
-                        </div>
-                    </div>
-                ) : (
-                    <ScoreCard
-                        quizResult={quizResult}
-                        questions={questions}
-                        name={name}
-                    />
-                )}
-            </div>
-        </div>
+                                </Span>
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Answers>
+                        <BoldText>
+                            Question {currentQuestionIndex + 1}/{questions.length}
+                        </BoldText>
+                        <Button
+                            onClick={handleNextQuestion}
+                            disabled={!answerChecked}
+                        >
+                            {currentQuestionIndex === questions.length - 1 ?
+                                'Submit' : 'Next Question'}
+                        </Button>
+                    </Answers>
+                </QuizWrapper>
+            ) : (
+                <ScoreCard
+                    quizResult={quizResult}
+                    questions={questions}
+                    name={name}
+                />
+            )}
+        </Wrapper>
     );
 };
+
+const Wrapper = styled.div`
+  color: #fff;
+`;
+
+const QuizWrapper = styled.div`
+  color: #fff;
+`;
+
+const Question = styled.p`
+    font-size: 1.2em;
+`;
+
+const List = styled.ul``;
+
+const ListItem = styled.li`
+    cursor: pointer;
+    margin: 10px 0;
+`;
+
+const Span = styled.span<{ isSelected: boolean }>`
+  border-bottom: ${props => props.isSelected ? '2px solid #fff' : '2px solid transparent'};
+`;
+
+const Answers = styled.div``;
+
+const BoldText = styled.p`
+  font-weight: 700;
+`;
+
+const Button = styled.button<{disabled: boolean}>`
+  color: #000;
+  border: 2px solid #fff;
+  background-color: ${props => props.disabled ? '#d3d3d3' : '#0f0'};
+  cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+`;

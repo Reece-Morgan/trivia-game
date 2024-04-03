@@ -61,8 +61,10 @@ const Input = styled.input`
 `;
 
 const Button = styled.button<{disabled: boolean}>`
-  color: #000;
-  border: 2px solid #fff;
-  background-color: ${props => props.disabled ? '#d3d3d3' : '#0f0'};
+  color: ${props => props.disabled ? '#000' : '#fff'};
+  background-color: ${props => props.disabled ? '#d3d3d3' : '#023610'};
   cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 1em;
 `;

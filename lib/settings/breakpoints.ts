@@ -1,4 +1,4 @@
-const breakpointValues = {
+export const breakpointValues = {
   xxs: "320px",
   xs: "450px",
   sm: "600px",
@@ -7,5 +7,3 @@ const breakpointValues = {
   lg: "1270px",
   xl: "1920px",
 };
-
-export default breakpointValues;

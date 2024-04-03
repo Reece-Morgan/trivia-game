@@ -1,1 +1,1 @@
-export * from "./breakpoints";
+export { breakpointValues } from "./breakpoints";

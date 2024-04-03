@@ -2,6 +2,8 @@ import React from 'react';
 import { quizResults } from '@types';
 import styled from 'styled-components';
 import { Button } from '../button/button';
+import Link from 'next/link';
+import { ButtonLink } from '../button-link/button-link';
 
 interface Props {
     quizResult: quizResults;
@@ -44,11 +46,18 @@ export const ScoreCard = ({ quizResult, questions, name }: Props) => {
                         <TableData>Status:</TableData>
                         <TableData>{status}</TableData>
                     </TableRow>
+                    <TableRow>
+                        <TableData>
+                            <Button onClick={() => window.location.reload()} disabled={false}>
+                                Restart
+                            </Button>
+                        </TableData>
+                        <TableData>
+                            <ButtonLink href='/'>Back to Home</ButtonLink>
+                        </TableData>
+                    </TableRow>
                 </TableBody>
             </Table>
-            <Button onClick={() => window.location.reload()} disabled={false}>
-                Restart
-            </Button>
         </Wrapper>
     );
 };

@@ -9,17 +9,20 @@ export default function Home() {
       <Title>Choose Your Trivia Game!</Title>
       <List>
         <ListItem>
-          <StyledLink href='/programming-quiz'>Programming Quiz</StyledLink>
+          <StyledLink href='/programming-trivia'>Programming</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink href='/space-quiz'>Space Quiz</StyledLink>
+          <StyledLink href='/space-trivia'>Space</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink href='/football-quiz'>Football Quiz</StyledLink>
+          <StyledLink href='/football-trivia'>Football</StyledLink>
         </ListItem>
         <ListItem>
-          <StyledLink href='/greek-mythology-quiz'>Greek Mythology Quiz</StyledLink>
+          <StyledLink href='/greek-mythology-trivia'>Greek Mythology</StyledLink>
         </ListItem>
+      </List>
+      <Title>Special, One Time Only Games</Title>
+      <List>
         <ListItem>
           <StyledLink href='/super-duper-hard-jakey-d-football-quiz'>Super Duper Hard JakeyD Football Quiz</StyledLink>
         </ListItem>
@@ -36,6 +39,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   text-align: center;
+  font-size: 1.5em;
 `;
 
 const List = styled.ul``;

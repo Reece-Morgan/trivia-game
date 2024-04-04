@@ -4,7 +4,7 @@ import { breakpointValues } from "@settings";
 export const Header = (): JSX.Element => {
   return (
     <HeaderContainer>
-      <Title data-testId="header-title">Trivia Game</Title>
+      <Title data-testid="header-title">Trivia Game</Title>
     </HeaderContainer>
   );
 };

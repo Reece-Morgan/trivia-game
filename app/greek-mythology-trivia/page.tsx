@@ -1,42 +1,45 @@
-'use client'
+"use client";
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Quiz } from "@component-library";
 import { breakpointValues } from "@settings";
 import { greekMythologyQuiz } from "@data";
+import { callTriviaRoute } from "lib/api/trivia-api";
 
 export default function SpaceQuiz() {
   const [quizStarted, setQuizStarted] = useState<boolean>(false);
-  const [name, setName] = useState<string>('');
+  const [name, setName] = useState<string>("");
+
+  useEffect(() => {
+    const getDataTest = async () => {
+      const res = await callTriviaRoute("getTrivia");
+      console.log("debug: ", res);
+    };
+    getDataTest();
+  }, []);
 
   return (
     <Wrapper>
       {quizStarted ? (
-          <Quiz name={name} quiz={greekMythologyQuiz} />
+        <Quiz name={name} quiz={greekMythologyQuiz} />
       ) : (
-          <FormWrapper>
-              <Form>
-                  <Label htmlFor="nameInput">
-                      Enter Your Name:
-                  </Label>
-                  <Input
-                      type="text"
-                      id="nameInput"
-                      value={name}
-                      onChange={(e) =>
-                          setName(e.target.value)}
-                  />
-              </Form>
-              <Button
-                  onClick={() => setQuizStarted(true)}
-                  disabled={!name.trim()}
-              >
-                  Start Quiz
-              </Button>
-          </FormWrapper>
+        <FormWrapper>
+          <Form>
+            <Label htmlFor="nameInput">Enter Your Name:</Label>
+            <Input
+              type="text"
+              id="nameInput"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form>
+          <Button onClick={() => setQuizStarted(true)} disabled={!name.trim()}>
+            Start Quiz
+          </Button>
+        </FormWrapper>
       )}
     </Wrapper>
-  )
+  );
 }
 
 const Wrapper = styled.div`
